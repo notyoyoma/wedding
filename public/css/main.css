@@ -1,0 +1,225 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+html { font-size:24px; }
+body { font-size:18px; }
+@media (min-width: 992px) { html { font-size:32px; } }
+@media (max-width: 767px) { html { font-size:18px; } body { font-size:14px; } }
+
+
+/* Core stuff */
+  .ta-center           {  text-align:center;  }
+  .ta-left             {  text-align:left;    }
+  .ta-right            {  text-align:right;   }
+  @media (min-width: 992px) {
+    .tablet-ta-center  {  text-align:center;  }
+    .tablet-ta-left    {  text-align:left;    }
+    .tablet-ta-right   {  text-align:right;   }
+  }
+  @media (max-width: 767px) {
+    .phone-ta-center   {  text-align:center;  }
+    .phone-ta-left     {  text-align:left;    }
+    .phone-ta-right    {  text-align:right;   }
+  }
+  h1,h2,h3,h4,h5 {
+    margin:0.5em 0 0 0;
+    font-family: 'Oleo Script Swash Caps', cursive;
+  }
+  h1:first-child,h2:first-child,h3:first-child,h4:first-child,h5:first-child {
+    margin-top:0;
+  }
+  .bg-blue    { background: #2981BD; color:#FFF; }
+  .bg-brown   { background: #594F3B; color:#FFEEE0; }
+  .bg-purple  { background: #3F3B4E; color:#BAC3CF; }
+  .bg-gray    { background: #BAC3CF; color:#3F3B4E; }
+  .section {
+    padding: 48px 0;
+    padding: 2rem 0;
+  }
+  h1 {
+    font-size:78px;
+    font-size:3rem;
+  }
+
+/* Site Header */
+  .jumbotron {
+    margin-bottom:0;
+  }
+  .special {
+    display:inline-block;
+    margin: 144px 0;
+    margin: 6rem 0;
+    padding:24px;
+    padding:1rem;
+    color:#ffeee0;
+    background:rgba(35, 26, 17, .5);
+    width:35%;
+    min-width:230px;
+  }
+  .special h1 {
+    margin:0;
+    font-family: 'Italianno', cursive;
+    font-size:150%;
+  }
+  .special h3 {
+    margin:200%;
+  }
+  .jumbotron {
+    background-image: url('/img/banner.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  @media (max-width: 480px) {
+    .special {
+      margin:300px auto 0;
+      display:block;
+    }
+  }
+
+/* Popup styling */
+  .mfp-inline-holder .mfp-content {
+    width: 400px;
+    margin: 0 auto;
+    background: rgba(127,121,115,.6);
+    padding: 24px;
+    padding: 1rem;
+    color:#fff;
+  }
+  .mfp-content h1 {
+    margin:0 0 24px;
+    margin:0 0 1rem;
+    text-align:center;
+  }
+  .mfp-content input[type=text] {
+    width: 100%;
+    margin: 0;
+    padding: 0.4em 0.5em;
+    border: 0;
+  }
+  .mfp-close-btn-in .mfp-inline-holder .mfp-close {
+    color:#fff;
+  }
+
+
+/* form styling */
+  /* Inputs */
+    #rsvp-form input[type=text] {
+      color:#333;
+    }
+    #rsvp-form .field {
+      position:relative;
+      margin-bottom:0.5rem;
+    }
+    .plus-one { position:relative;
+      margin-right:35px;
+      margin-bottom:12px;
+      margin-bottom:0.5rem;
+    }
+    .plus-one input[type=text] {
+      margin-bottom:0;
+    }
+    input + label.error,
+    .plus-one a.remover {
+      position:absolute;
+      top:50%;
+      margin-top:-15px;
+      display:inline-block;
+      background:#821d1d;
+      width:30px;
+      height:30px;
+      line-height:30px;
+      text-align:center;
+      margin-left:5px;
+      color:#fff;
+      font-size: 24px;
+      font-size: 1rem;
+      text-shadow: 1px 2px 0 #000;
+    }
+    .plus-one a.remover:before {
+      content:"\d7";
+    }
+    .plus-one a.remover:hover {
+      text-decoration:none;
+    }
+    input + label.error {
+      right: 0.1em;
+      border-radius: 5px;
+      font-size: 0.6rem;
+    }
+
+  /* Buttons */
+    /* Plus Adder */
+    .button {
+      border-radius:5px;
+    }
+    .plus-adder {
+      display:inline-block;
+      background:#37802b;
+      color:#fff;
+      padding: 0.25rem 0.5rem;
+      line-height: 25px;
+    }
+    .plus-adder:before {
+      content:"+";
+      font-size:18px;
+      font-size:0.75rem;
+      vertical-align: middle;
+      margin-right: 10px;
+      line-height: 0;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .plus-adder span:before {
+      content:"a";
+    }
+    .plus-one + .plus-adder span:before {
+      content:"another";
+    }
+    a.button:focus,
+    a.button:active,
+    a.button:hover {
+      text-decoration:none;
+      color:#fff;
+      text-decoration:none;
+    }
+    .actions {
+      margin-top:30px;
+    }
+    .actions input[type=submit] {
+      font-size:36px;
+      font-size:1.5rem;
+      font-family: 'Oleo Script Swash Caps', cursive;
+      border:0;
+      padding:12px 24px;
+      padding:0.5rem 1rem;
+      background:#37802B;
+      color:#fff;
+    }
+
+    /* Map Styles */
+    #map-container {
+      width:100%;
+      height:0;
+      position:relative;
+      padding-bottom:40%;
+    }
+    #map-container #map {
+      position:absolute;
+      width:100%;
+      height:100%;
+    }
+    .mapbox-logo.leaflet-control.mapbox-logo-true {
+      display:none;
+    }
+    @media (min-width: 1200px) {
+      #map-container {
+        padding-bottom:30%;
+      }
+    }
+    @media (max-width: 480px) {
+      #map-container {
+        padding-bottom:80%;
+      }
+    }
