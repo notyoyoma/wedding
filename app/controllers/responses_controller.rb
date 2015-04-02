@@ -4,7 +4,8 @@ class ResponsesController < ApplicationController
   # GET /responses
   # GET /responses.json
   def index
-    @responses = Response.all
+    @coming = Response.where(:coming, true)
+    @notComing = Response.where(:coming, false)
   end
 
   # GET /responses/1
