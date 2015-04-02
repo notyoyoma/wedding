@@ -25,7 +25,13 @@
         });
 
     var rsvpFormSuccess = function(e, d) {
-          container.html(success_message);
+          $.ajax({
+            url: '/responses/'+e.id,
+            method: 'get',
+            dataType: 'html'
+          }).done(function(data) {
+            container.html(data);
+          });
         },
         rsvpFormErr = function(e, d) {
           container.html(error_message);

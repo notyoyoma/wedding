@@ -4,8 +4,8 @@ class ResponsesController < ApplicationController
   # GET /responses
   # GET /responses.json
   def index
-    @coming = Response.where(:coming, true)
-    @notComing = Response.where(:coming, false)
+    @coming = Response.where(coming: true)
+    @notComing = Response.where(coming: false)
   end
 
   # GET /responses/1
@@ -71,6 +71,8 @@ class ResponsesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def response_params
-      params.require(:response).permit(:person, :email, :plusses, :coming)
+      result = params.require(:response).permit(:person, :email, :plusses, :coming)
+      result[:coming] = result[:coming] == '1'
+      return result
     end
 end

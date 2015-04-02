@@ -1,19 +1,11 @@
+<% if notice %>
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Person:</strong>
-  <%= @response.person %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @response.email %>
-</p>
-
-<p>
-  <strong>Plusses:</strong>
-  <%= @response.plusses %>
-</p>
-
-<%= link_to 'Edit', edit_response_path(@response) %> |
-<%= link_to 'Back', responses_path %>
+<% else %>
+  <% if @response.coming %>
+    <h1>Thank you!</h1>
+    <p>We can't wait to see you!</p>
+  <% else %>
+    <h2>Thanks</h2>
+    <p>Sorry you can't make it, but thanks for responding.</p>
+  <% end %>
+<% end %>
