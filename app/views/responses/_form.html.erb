@@ -21,6 +21,10 @@
   <div class="field" style="overflow:hidden; margin-bottom:12px; margin-bottom:0.5rem;">
     <%= f.text_field :plusses %>
   </div>
+  <div class="field">
+    <%= check_box_tag :coming, true, true %>
+    <%= label_tag :coming, '<span id="yes-no"></span>, <span id="noun-verb"></span> <span id="adverb"></span> coming<span id="smile"><span id="eyes">:</span><span id="mouth">)</span></span>'.html_safe %>
+  </div>
   <div class="actions ta-center">
     <%= f.submit value: 'RSVP', class: 'button' %>
   </div>

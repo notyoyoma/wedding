@@ -7,7 +7,9 @@
     
     // setup variables
     var container = $('#rsvp-form ').append(data),
-        form = container.find('form'),
+        form = container.find('form').on('plus_one_changed', function() {
+          $(this).toggleClass('form-plus-one', !!$('div.plus-one').length);
+        }),
         success_message = $('#rsvp-success-message'),
         error_message = $('#rsvp-error-message'),
         pluses_field = form.find('#response_plusses'),
@@ -19,6 +21,7 @@
           var plusOne = plus_tmpl.clone(true).hide();
           plus_adder.before(plusOne);
           plusOne.slideDown();
+          form.trigger('plus_one_changed');
         });
 
     var rsvpFormSuccess = function(e, d) {
@@ -73,6 +76,7 @@
         e.preventDefault();
         $(this).parent().slideUp(400, function() {
           $(this).remove();
+          form.trigger('plus_one_changed');
         });
       });
   };

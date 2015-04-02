@@ -223,3 +223,83 @@ body { font-size:18px; }
         padding-bottom:80%;
       }
     }
+
+    input[type=checkbox] {
+      display: none;
+    }
+    input[type=checkbox] + label{
+      display:block;
+      position:relative;
+      padding:0 1.5rem;
+      line-height:1.5rem;
+    }
+    input[type=checkbox] + label:before,
+    input[type=checkbox] + label:after {
+      position:absolute;
+      left:0;
+      top:0;
+      display:block;
+    }
+    input[type=checkbox] + label:before {
+      content: "";
+      background: rgba(255, 255, 255, 0.5);
+      height: 1rem;
+      width: 1rem;
+      border-radius: 6px;
+      box-shadow: inset 0 0 0 2px #EEE;
+      margin: 0.25rem 0;
+    }
+    input[type=checkbox] + label:after {
+      content:"\2713";
+      font-size: 50px;
+      color: #37802B;
+      margin-top: -0.25rem;
+      width:0;
+      overflow:hidden;
+      text-shadow: 1px 1px 1px #000;
+      transition:width 0.3s linear;
+    }
+    input[type=checkbox]:checked + label:after {
+      width:1.5rem;
+    }
+    input[type=checkbox]            + label span#yes-no:before     { content: "No"; }
+    input[type=checkbox]:checked    + label span#yes-no:before     { content: "Yes"; }
+    input[type=checkbox]            + label span#noun-verb:before  { content: "I am"; }
+    .form-plus-one input[type=checkbox]  + label span#noun-verb:before  { content: "we are"; }
+    input[type=checkbox]            + label span#adverb:before     { content: "not"; }
+    input[type=checkbox]:checked    + label span#adverb:before     { content: ""; }
+    
+    #smile {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: block;
+      width: 1.5rem;
+      height: 1.5rem;
+      font-size: 1rem;
+      transform: rotate(90deg);
+      font-family: arrial;
+    }
+    #smile span {
+      transition: all 1s ease;
+      position:absolute;
+      line-height:0;
+    }
+    #smile #eyes {
+      top: 39%;
+      left: 25%;
+      font-size: 150%;
+    }
+    #smile #mouth {
+      top:-5%;
+      left:60%;
+      font-size:110%;
+      line-height:1.5rem;
+      transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
+    }
+
+    input:checked + label #smile #mouth {
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+      font-size:140%;
+      top:-6%;
+    }
