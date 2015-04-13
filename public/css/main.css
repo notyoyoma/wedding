@@ -80,7 +80,7 @@ body { font-size:18px; }
 
 /* Popup styling */
   .mfp-inline-holder .mfp-content {
-    width: 400px;
+    max-width: 400px;
     margin: 0 auto;
     background: rgba(127,121,115,.6);
     padding: 24px;
@@ -251,7 +251,7 @@ body { font-size:18px; }
     }
     input[type=checkbox] + label:after {
       content:"\2713";
-      font-size: 50px;
+      font-size: 1.4rem;
       color: #37802B;
       margin-top: -0.25rem;
       width:0;
@@ -270,9 +270,9 @@ body { font-size:18px; }
     input[type=checkbox]:checked    + label span#adverb:before     { content: ""; }
     
     #smile {
-      position: absolute;
-      top: 0;
-      right: 0;
+      position:absolute;
+      right:0;
+      top:0;
       display: block;
       width: 1.5rem;
       height: 1.5rem;
@@ -281,25 +281,27 @@ body { font-size:18px; }
       font-family: arrial;
     }
     #smile span {
-      transition: all 1s ease;
-      position:absolute;
-      line-height:0;
+      position:relative;
+      transition: all 1s ease-in-out;
+      line-height:1.5rem;
+      letter-spacing:0.2rem;
+      font-size: 1.5rem;
+      top:0;
+      left:0;
     }
     #smile #eyes {
-      top: 39%;
-      left: 25%;
-      font-size: 150%;
     }
     #smile #mouth {
-      top:-5%;
-      left:60%;
-      font-size:110%;
-      line-height:1.5rem;
-      transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
+      top:3%;
+      left:-3%;
+    }
+    #smile #mouth:before {
+      content:'(';
     }
 
-    input:checked + label #smile #mouth {
-      transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-      font-size:140%;
-      top:-6%;
+    input:checked ~ label #smile #mouth {
+      left:0;
+    }
+    input:checked ~ label #smile #mouth:before {
+      content:')'
     }

@@ -12,6 +12,9 @@
         }),
         success_message = $('#rsvp-success-message'),
         error_message = $('#rsvp-error-message'),
+        email_field = form.find('#response_email').on('keypress', function(e) {
+          if (e.which == 32) return false;
+        }),
         pluses_field = form.find('#response_plusses'),
         plus_container = pluses_field.parent(),
         plus_tmpl = $('<div class="plus-one"><input type="text" placeholder="Name of Plus One"/><a href="#" class="remover button"></a></div>'),
@@ -31,6 +34,9 @@
             dataType: 'html'
           }).done(function(data) {
             container.html(data);
+            setTimeout(function() {
+              rsvp.magnificPopup('close');
+            }, 2000);
           });
         },
         rsvpFormErr = function(e, d) {
