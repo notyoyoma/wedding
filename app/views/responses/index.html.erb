@@ -10,18 +10,32 @@
     </tr>
   </thead>
 
+  <% num = 0 %>
   <tbody>
     <% @coming.each do |response| %>
+      <%
+        num += 1
+        plusses_arr = JSON.parse(response.plusses)
+        num += plusses_arr.count
+        plusses = plusses_arr.join(', ')
+      %>
       <tr>
         <td><%= response.person %></td>
         <td><%= response.email %></td>
-        <td><%= response.plusses %></td>
+        <td>
+          <%= plusses %>
+        </td>
         <td><%= link_to 'Show', response %></td>
         <td><%= link_to 'Edit', edit_response_path(response) %></td>
         <td><%= link_to 'Destroy', response, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
+  <tfoot>
+    <th>
+      Total: <%= num %>
+    </th>
+  </tfoot>
 </table>
 
 <h1>Not Coming:</h1>
@@ -36,18 +50,30 @@
     </tr>
   </thead>
 
+  <% num = 0 %>
   <tbody>
     <% @notComing.each do |response| %>
+      <%
+        num += 1
+        plusses_arr = JSON.parse(response.plusses)
+        num += plusses_arr.count
+        plusses = plusses_arr.join(', ')
+      %>
       <tr>
         <td><%= response.person %></td>
         <td><%= response.email %></td>
-        <td><%= response.plusses %></td>
+        <td><%= plusses %></td>
         <td><%= link_to 'Show', response %></td>
         <td><%= link_to 'Edit', edit_response_path(response) %></td>
         <td><%= link_to 'Destroy', response, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
+  <tfoot>
+    <th>
+      Total: <%= num %>
+    </th>
+  </tfoot>
 </table>
 <br>
 
