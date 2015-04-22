@@ -17,11 +17,13 @@
         num += 1
         begin
           plusses_arr = JSON.parse(response.plusses)
+          num += plusses_arr.count
+          plusses = plusses_arr.join(', ')
         rescue
           plusses_arr = response.plusses
+          num += 1
+          plusses = plusses_arr
         end
-        num += plusses_arr.count
-        plusses = plusses_arr.join(', ')
       %>
       <tr>
         <td><%= response.person %></td>
@@ -61,11 +63,13 @@
         num += 1
         begin
           plusses_arr = JSON.parse(response.plusses)
+          num += plusses_arr.count
+          plusses = plusses_arr.join(', ')
         rescue
           plusses_arr = response.plusses
+          num += 1
+          plusses = plusses_arr
         end
-        num += plusses_arr.count
-        plusses = plusses_arr.join(', ')
       %>
       <tr>
         <td><%= response.person %></td>
