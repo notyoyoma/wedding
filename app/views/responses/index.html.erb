@@ -15,7 +15,11 @@
     <% @coming.each do |response| %>
       <%
         num += 1
-        plusses_arr = JSON.parse(response.plusses)
+        begin
+          plusses_arr = JSON.parse(response.plusses)
+        rescue
+          plusses_arr = response.plusses
+        end
         num += plusses_arr.count
         plusses = plusses_arr.join(', ')
       %>
@@ -55,7 +59,11 @@
     <% @notComing.each do |response| %>
       <%
         num += 1
-        plusses_arr = JSON.parse(response.plusses)
+        begin
+          plusses_arr = JSON.parse(response.plusses)
+        rescue
+          plusses_arr = response.plusses
+        end
         num += plusses_arr.count
         plusses = plusses_arr.join(', ')
       %>
